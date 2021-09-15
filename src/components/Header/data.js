@@ -1,13 +1,4 @@
-interface listInterface {
-  title: string,
-  path: string
-};
-interface subNavInterface {
-  path: string
-  name: string,
-};
-
-export const list: listInterface[] = [
+export const list = [
     {
       title: "发现音乐",
       path: "/home",
@@ -34,7 +25,7 @@ export const list: listInterface[] = [
     },
   ];
   
-  export const subNav: subNavInterface[] = [
+  export const subNav = [
     {
         path: '',
         name: '推荐'

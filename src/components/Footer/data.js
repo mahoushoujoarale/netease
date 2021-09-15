@@ -1,13 +1,4 @@
-interface linksInterface {
-    href: string,
-    name: string,
-};
-interface copysInterface {
-    href: string,
-    name: string,
-};
-
-export const links: linksInterface[] = [
+export const links = [
     {
         name: '服务条款',
         href: 'https://st.music.163.com/official-terms/service'
@@ -33,7 +24,7 @@ export const links: linksInterface[] = [
         href: 'https://music.163.com/#'
     },
 ];
-export const copys: copysInterface[] = [
+export const copys = [
     {
         href: 'https://web-amped.music.163.com/',
         name: 'amped',

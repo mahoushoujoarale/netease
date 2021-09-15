@@ -1,6 +1,7 @@
 import "./index.less";
 import { list, subNav } from "./data";
 import { useState } from "react";
+import { Link, HashRouter as Router } from "react-router-dom";
 
 const Header = () => {
   const [currentItem, setCurrentItem] = useState(0);
@@ -16,13 +17,25 @@ const Header = () => {
             {list.map((item, index) => {
               return (
                 <li
-                  className={index === currentItem ? "current-item" : "item"}
                   key={item.title}
                   onClick={() => {
                     setCurrentItem(index);
                   }}
+                  style={{ display: "inline-block" }}
                 >
-                  {item.title}
+                  <Router>
+                    <Link to={item.path}>
+                      <div
+                        className={
+                          index === currentItem
+                            ? "current-item"
+                            : "item"
+                        }
+                      >
+                        {item.title}
+                      </div>
+                    </Link>
+                  </Router>
                 </li>
               );
             })}
@@ -41,15 +54,25 @@ const Header = () => {
             {subNav.map((item, index) => {
               return (
                 <li
-                  className={
-                    index === currentSubItem ? "current-sub-item" : "sub-item"
-                  }
                   key={item.name}
                   onClick={() => {
                     setCurrentSubItem(index);
                   }}
+                  style={{ display: "inline-block" }}
                 >
-                  {item.name}
+                  <Router>
+                    <Link to={item.path}>
+                      <div
+                        className={
+                          index === currentSubItem
+                            ? "current-sub-item"
+                            : "sub-item"
+                        }
+                      >
+                        {item.name}
+                      </div>
+                    </Link>
+                  </Router>
                 </li>
               );
             })}
