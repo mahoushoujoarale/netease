@@ -1,14 +1,13 @@
 import "./index.less";
 import { list, subNav } from "./data";
 import { useState } from "react";
-import { Link, HashRouter as Router } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const [currentItem, setCurrentItem] = useState(0);
-  const [currentSubItem, setCurrentSubItem] = useState(0);
   return (
-    <>
-      <div className="header">
+    <div className="header">
+      <div className="header-nav">
         <div className="container">
           <h1 className="logo">
             <a href="/#">网易云音乐</a>
@@ -23,19 +22,13 @@ const Header = () => {
                   }}
                   style={{ display: "inline-block" }}
                 >
-                  <Router>
-                    <Link to={item.path}>
-                      <div
-                        className={
-                          index === currentItem
-                            ? "current-item"
-                            : "item"
-                        }
-                      >
-                        {item.title}
-                      </div>
-                    </Link>
-                  </Router>
+                  <NavLink
+                    to={item.path}
+                    className="item"
+                    activeClassName="current-item"
+                  >
+                    {item.title}
+                  </NavLink>
                 </li>
               );
             })}
@@ -53,33 +46,21 @@ const Header = () => {
           <ul className="sub-list">
             {subNav.map((item, index) => {
               return (
-                <li
-                  key={item.name}
-                  onClick={() => {
-                    setCurrentSubItem(index);
-                  }}
-                  style={{ display: "inline-block" }}
-                >
-                  <Router>
-                    <Link to={item.path}>
-                      <div
-                        className={
-                          index === currentSubItem
-                            ? "current-sub-item"
-                            : "sub-item"
-                        }
-                      >
-                        {item.name}
-                      </div>
-                    </Link>
-                  </Router>
+                <li key={item.name} style={{ display: "inline-block" }}>
+                  <NavLink
+                    to={item.path}
+                    className="sub-item"
+                    activeClassName="current-sub-item"
+                  >
+                    {item.name}
+                  </NavLink>
                 </li>
               );
             })}
           </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

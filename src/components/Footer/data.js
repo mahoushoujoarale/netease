@@ -20,7 +20,7 @@ export const links = [
         href: 'https://music.163.com/#'
     },
     {
-        name: '广告反馈',
+        name: '广告合作',
         href: 'https://music.163.com/#'
     },
 ];

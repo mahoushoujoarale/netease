@@ -1,6 +1,6 @@
 import "./index.less";
 import { links, copys } from "./data";
-import police from "../../assets/images/police.png";
+import police from "@/assets/images/police.png";
 
 const Footer = () => {
   return (
@@ -10,8 +10,10 @@ const Footer = () => {
           <ul className="links">
             {links.map((item) => {
               return (
-                <li className="link" key={item.name}>
-                  <a href={item.href}>{item.name}</a>
+                <li key={item.name}>
+                  <a href={item.href} className="link">
+                    {item.name}
+                  </a>
                 </li>
               );
             })}

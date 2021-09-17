@@ -27,7 +27,7 @@ export const list = [
   
   export const subNav = [
     {
-        path: '',
+        path: '/recommend',
         name: '推荐'
     },
     {

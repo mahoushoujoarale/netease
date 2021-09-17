@@ -1,3 +1,9 @@
-import {ajax} from './../utils/ajax';
+import {request} from '../utils/request';
 
-export const getCarousel = () => ajax("/banner");
+export const getCarousel = () => request("/banner");
+export const getRecommend = () => request("/personalized");
+export const getAlbum = () => request("/album/newest");
+export const getToplist = () => request("/toplist");
+export const getToplistById = ({id}) => request("/playlist/detail", {id});
+export const getAnchor = () => request("/dj/toplist/popular");
+export const getSinger = () => request("/top/artists");
