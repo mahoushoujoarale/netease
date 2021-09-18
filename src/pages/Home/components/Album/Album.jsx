@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import Title from "../Title/Title";
+import BlockTitle from "../BlockTitle/BlockTitle";
 import { Carousel } from "antd";
 import { getAlbum } from "@/apis/home";
 import { Link } from "react-router-dom";
@@ -21,7 +21,7 @@ const Album = () => {
 
   return (
     <div className="album">
-      <Title name="新碟上架" href="/discover/album" />
+      <BlockTitle name="新碟上架" href="/discover/album" />
       <div className="album-roller">
         <Carousel auto dots={false} ref={rollerRef}>
           {loop.map((item, index) => {

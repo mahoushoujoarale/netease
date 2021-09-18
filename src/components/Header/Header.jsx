@@ -1,7 +1,7 @@
 import "./index.less";
 import { list, subNav } from "./data";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const Header = () => {
   const [currentItem, setCurrentItem] = useState(0);
@@ -36,7 +36,9 @@ const Header = () => {
           <div className="search">
             <input type="text" placeholder="音乐/视频/电台/用户" />
           </div>
-          <button className="creator">创作者中心</button>
+          <Link to="/creatorcenter" className="creator">
+            创作者中心
+          </Link>
           <div className="login">登录</div>
         </div>
       </div>

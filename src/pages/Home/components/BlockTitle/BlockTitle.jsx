@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./index.less";
 
-const Title = (props) => {
+const BlockTitle = (props) => {
   const { name = "", list = [], href = "" } = props;
   return (
-    <div className="title">
+    <div className="block-title">
       <div className="name">{name}</div>
       <ul className="list">
         {list.map((item) => {
@@ -25,4 +25,4 @@ const Title = (props) => {
   );
 };
 
-export default Title;
+export default BlockTitle;

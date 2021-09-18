@@ -1,7 +1,7 @@
 import React from "react";
 import { getRecommend } from "@/apis/home";
 import { useState, useEffect } from "react";
-import Title from "../Title/Title";
+import BlockTitle from "../BlockTitle/BlockTitle";
 import { Link } from "react-router-dom";
 import "./index.less";
 import { formatPlayCount } from "@/utils/formatPlayCount";
@@ -19,7 +19,7 @@ const Recommend = () => {
 
   return (
     <div className="recommend">
-      <Title
+      <BlockTitle
         name="热门推荐"
         list={[
           { name: "华语", href: "/discover/playlist/?cat=华语" },
