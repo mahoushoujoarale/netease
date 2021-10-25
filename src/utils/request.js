@@ -1,9 +1,9 @@
 import axios from "axios";
-import {message} from "antd"
+import {message} from "antd";
 
-export const BaseURL = "http://localhost:4000"
+export const BaseURL = "http://204.152.210.176:3000";
 
-axios.defaults.baseURL = BaseURL
+axios.defaults.baseURL = BaseURL;
 
 // 1. 分层解耦
 // 2. 业务植入

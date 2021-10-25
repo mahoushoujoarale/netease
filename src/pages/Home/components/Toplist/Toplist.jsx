@@ -14,7 +14,7 @@ const TopList = () => {
       const data = [];
       for (let i = 0; i < 3; i++) {
         middle[i] = await getToplistById({ id: list[i].id });
-        data[i] = middle[i].playlist;
+        data[i] = middle[i].playlist || {};
       }
       setRank(data);
     }
